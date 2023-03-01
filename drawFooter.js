@@ -3,7 +3,7 @@ const phone = '8 (496) 549-12-21';
 const email = 'RSLIO@list.ru';
 
 
-function draw() {
+export function draw() {
     let footer = document.querySelector('footer');
     let div, p;
 
@@ -57,4 +57,4 @@ function draw() {
     div.append(p);
 }
 
-draw();
+// draw();
