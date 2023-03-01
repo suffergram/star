@@ -1,5 +1,11 @@
 'use strict';
 
+import { draw as drawHeader } from './drawHeader.js';
+import { draw as drawFooter } from './drawFooter.js';
+
+drawHeader();
+drawFooter();
+
 const ms = 3000;
 let titles = [
 	'Каркасно-штамповочное производство',
