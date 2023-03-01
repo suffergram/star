@@ -64,7 +64,7 @@ const contacts = {
 
 const categories = [typesOfProduction, products, partnership, docs, about, contacts];
 
-function draw() {
+export function draw() {
     const header = document.querySelector('header');
     const nav = document.querySelector('nav');
 
@@ -116,4 +116,4 @@ function draw() {
     }
 }
 
-draw();
+// draw();
