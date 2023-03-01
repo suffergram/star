@@ -1,3 +1,5 @@
+'use strict';
+
 const ms = 3000;
 let titles = [
 	'Каркасно-штамповочное производство',
@@ -66,10 +68,16 @@ function computeImg() {
 computeImg();
 let interval = setInterval(computeImg, ms);
 
+
+
 document.addEventListener('mouseover', (event) => {
 	let targetClass = event.target.classList;
 	if (targetClass == 'img' || targetClass == 'description' || targetClass == 'circle') {
 		clearInterval(interval);
+	}
+
+	if (targetClass == 'tile') {
+		event.target.style.color = 'white';
 	}
 });
 
@@ -77,6 +85,10 @@ document.addEventListener('mouseout', (event) => {
 	let targetClass = event.target.classList;
 	if (targetClass == 'img' || targetClass == 'description' || targetClass == 'circle') {
 		interval = setInterval(computeImg, ms);
+	}
+
+	if (targetClass == 'tile') {
+		event.target.style.color = null;
 	}
 });
 
@@ -86,4 +98,6 @@ document.addEventListener('click', (event) => {
 		computeImg();
 	}
 });
+
+
 

@@ -129,10 +129,10 @@ nav a:hover {
 	width: 150px;
 }
 
-.orderns {
+.orders {
 	position: absolute;
 	right: 2%;
-	background-image: linear-gradient(45deg, rgba(0, 0, 17, 0.03), rgba(85, 85, 102, 0.21)), url("img/orderns.png");;
+	background-image: linear-gradient(45deg, rgba(0, 0, 17, 0.03), rgba(85, 85, 102, 0.21)), url("img/orders.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -152,12 +152,13 @@ nav a:hover {
 
 main {
 	width: 100%;
-	height: calc(100vh - var(--footer-height) - var(--header-height));
+	min-height: calc(100vh - var(--footer-height) - var(--header-height));
 	display: flex;
 	flex: 1 0 auto;
 	align-items: center;
 	flex-direction: column;
 	position: relative;
+	font-size: 1.5rem;
 }
 
 .container {
@@ -196,9 +197,9 @@ main {
 	transition: opacity 0.3s ease-in-out;
 }
 
-.prod p {
+.description {
 	padding: 15px 0;
-	font-size: 1.5em;
+	/* font-size: 1.5em; */
 	position: relative;
 }
 
@@ -210,6 +211,7 @@ main {
 	position: absolute;
 	bottom: 10%;
 	z-index: 1;
+	font-size: 1rem;
 }
 
 .circle {
@@ -219,6 +221,27 @@ main {
 	width: 2%;
 	display: flex;
 	justify-content: center;
+}
+
+.cgrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 10px;
+}
+
+.tile {
+	width: 14vw;
+	height: 14vw;
+	background-color: white;
+	color: black;
+	box-sizing: border-box;
+	padding: 5px;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .contacts {
@@ -248,11 +271,11 @@ main {
 footer {
 	background: var(--global-background-color);
 	height: var(--footer-height);
-	padding: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
+	overflow: hidden;
 }
 
 .footer-container {
