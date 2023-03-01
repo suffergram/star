@@ -1,11 +1,10 @@
 @font-face {
-    font-family: 'Proxima Nova Extra Condensed';
-    src: local('Proxima Nova Extra Condensed Regular'), local('Proxima-Nova-Extra-Condensed-Regular'),
-        url('ProximaNovaExCn-Regular.woff2') format('woff2'),
-        url('ProximaNovaExCn-Regular.woff') format('woff'),
-        url('ProximaNovaExCn-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Proxima Nova Extra Condensed';
+	src: url('font/ProximaNovaExCn-Regular.woff2') format('woff2'),
+		url('font/ProximaNovaExCn-Regular.woff') format('woff'),
+		url('font/ProximaNovaExCn-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 body {
@@ -19,6 +18,8 @@ body {
 
 	--global-width: 65%;
 	--global-background-color: linear-gradient(45deg, #001, #223);
+	--header-height: 80px;
+	--footer-height: 200px;
 }
 
 * {
@@ -56,7 +57,7 @@ body {
 
 
 header {
-	height: 80px;
+	height: var(--header-height);
 	width: 100%;
 	position: relative;
 	background: var(--global-background-color);
@@ -151,46 +152,40 @@ nav a:hover {
 
 main {
 	width: 100%;
-	height: calc(100vh - 200px - 80px);
+	height: calc(100vh - var(--footer-height) - var(--header-height));
 	display: flex;
 	flex: 1 0 auto;
 	align-items: center;
 	flex-direction: column;
 	position: relative;
-	outline: 1px solid orange;
 }
 
 .container {
 	width: var(--global-width);
-	min-height: 50vw;
-	/* height: 1px; */
+	height: 100%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	margin: 1% 0;
 	position: relative;
-	outline: 1px solid red;
 }
 
 .prod {
 	width: 80%;
-	/* height: 56.25%; */
-	height: 100%;
+	height: fit-content;
 	display: flex;
 	flex-direction: column; 
 	position: relative;
 	cursor: pointer;
-	outline: 1px solid yellow;
 }
 
 .crop {
 	width: 100%;
-	height: 56.25%;
+	height: 28.125vw;
 	position: relative;
-	outline: 1px solid blue;
 }
 
 .crop .img {
-	/* display: block; */
 	width: 100%;
 	height: 100%;
 	background-position: 100% 100%;
@@ -220,13 +215,11 @@ main {
 .circle {
 	cursor: pointer;
 	display: inline-block;
-	padding: .5% 1%;
+	padding: .25% .5%;
 	width: 2%;
 	display: flex;
 	justify-content: center;
 }
-
-
 
 .contacts {
 	display: flex;
@@ -254,7 +247,7 @@ main {
 
 footer {
 	background: var(--global-background-color);
-	height: 200px;
+	height: var(--footer-height);
 	padding: 15px;
 	display: flex;
 	justify-content: center;
