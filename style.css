@@ -254,9 +254,9 @@ main {
 .cgrid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1.5em;
+	gap: 1.3em;
 	position: relative;
-	margin-top: -50px;
+	margin-top: -4%;
 }
 
 .tile {
