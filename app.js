@@ -113,6 +113,8 @@ document.addEventListener('click', (event) => {
 	if (event.target.classList == 'circle') {
 		currentImage = event.target.getAttribute('val');
 		computeImg();
+		clearInterval(interval);
+		interval = setInterval(computeImg, ms);
 	}
 });
 
