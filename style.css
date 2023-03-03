@@ -207,13 +207,12 @@ main {
 	font-size: 2em;
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100%;
+	left: calc((100% - var(--global-width)) / 2);
+	width: var(--global-width);
 	height: 100%;
 	font-style: italic;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 .description-logo {
@@ -239,7 +238,7 @@ main {
 	cursor: pointer;
 	display: inline-block;
 	padding: .25% .25%;
-	width: 2%;
+	width: 1.5%;
 	display: flex;
 	justify-content: center;
 }
@@ -254,9 +253,10 @@ main {
 
 .cgrid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 2em;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5em;
 	position: relative;
+	margin-top: -50px;
 }
 
 .tile {
