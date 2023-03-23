@@ -10,10 +10,12 @@
 body {
 	font-family: 'Proxima Nova Extra Condensed', Arial;
 	color: white;
-	background-color: rgb(50, 50, 67);
-	background-image: linear-gradient(45deg, rgba(0, 0, 17, 0.73), rgba(85, 85, 102, 0.91)), url('img/background.png');
+	/* background-color: rgb(50, 50, 67); */
+	/* background-image: linear-gradient(45deg, rgba(0, 0, 17, 0.73), rgba(85, 85, 102, 0.91)), url('img/background.png'); */
+	/* background-color: rgb(220, 220, 220); */
+	background-image: linear-gradient(45deg, rgba(220, 220, 220, 0.97), rgba(220, 220, 220, 0.97)), url('img/bg-circuit-pattern.jpg');
 	background-size: 100%;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	min-height: 100vh;
 
 	--global-width: 65%;
@@ -29,7 +31,8 @@ body {
 }
 
 a {
-	color: #aab;
+	/* color: #aab; */
+	color: #77a;
 }
 
 .hidden {
@@ -167,6 +170,7 @@ main {
 
 .container {
 	width: calc(var(--global-width));
+	color: black;
 	display: flex;
 	flex: 1 1 auto;
 	flex-direction: column;
@@ -219,7 +223,7 @@ main {
 	background-image: url('img/logo3.png');
 	width: 85px;
 	height: 85px;
-	margin: 0 15px;
+	margin-right: 15px;
 	background-size: cover;
 }
 
@@ -253,6 +257,7 @@ main {
 
 .cgrid {
 	display: grid;
+	width: 100%;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1.3em;
 	position: relative;
@@ -314,8 +319,12 @@ footer {
 }
 
 .footer-container {
-	width: calc(var(--global-width) * 0.8);
+	width: var(--global-width);
 	height: 50%;
+}
+
+footer h3 {
+	margin-bottom: 5px;
 }
 
 .header {

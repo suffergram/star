@@ -1,7 +1,7 @@
 'use strict';
 
 const ms = 4000;
-let titles = [
+const titles = [
 	'Каркасно-штамповочное производство',
 	'Производство печатных плат',
 	'Механообрабатывающее производство',
@@ -10,14 +10,37 @@ let titles = [
 	'Литье алюминия',
 	'Литье изделий из пластмасс',
 ];
-let numberOfImages = titles.length;
+
+const products = {
+	'Шкафы телекоммуникационные': '#',
+	'Светодиодные светильники': '#',
+	'Светодиодные драйверы': '#',
+	'Быстроразъемные соединения': '#',
+	'Изделия механообрабатывающего производства': '#',
+	'Каркасы ферритовых сердечников': '#',
+	'Наконечники': '#',
+	'Пластмассовые и резиновые изделия': '#',
+	'Пневмопресс с регулируемым усилием': '#',
+	'Производство корпусных изделий': '#',
+	'Промышленная мебель': '#',
+	'Противотаранное останавливающее устройство ПОУ-1': '#',
+	'Тара технологическая': '#',
+	'Теплообменник ТВВ': '#',
+	'Электротехнические радиаторы': '#',
+	'Вычислительный комплекс "Эльбрус"': '#',
+	'Компьютеры серии "Эльбрус"': '#',
+	'Модули процессорные': '#',
+};
+
+let amountOfProducts = products.length;
+let amountOfImages = titles.length;
 let currentImage = 0;
 let lastImage = currentImage;
 
 let prod = document.querySelector('.prod');
 
 // загружаем картиночки
-for (let i = 0; i < titles.length; i++) {
+for (let i = 0; i < amountOfImages; i++) {
 	let img = document.createElement('div');
 	img.classList = 'img';
 	img.setAttribute('val', i);
@@ -37,7 +60,7 @@ for (let i = 0; i < titles.length; i++) {
 let images = prod.querySelectorAll('.img');
 
 // создаем кружочки в circleContainer
-for (let i = 0; i < numberOfImages; i++) {
+for (let i = 0; i < amountOfImages; i++) {
 	let circle = document.createElement('div');
 	circle.classList = 'circle';
 	circle.setAttribute('val', i);
@@ -62,11 +85,28 @@ function setCircle(number) {
 
 // функция, вычисляющая номер картинки и кружочка
 function computeImg() {
-	if (currentImage >= numberOfImages) currentImage = 0;
+	if (currentImage >= amountOfImages) currentImage = 0;
 	setNewImage(currentImage);
 	setCircle(currentImage);
 	lastImage = currentImage;
 	currentImage++;
+}
+
+// ставим нулевую картинку и включаем интервал
+computeImg();
+let interval = setInterval(computeImg, ms);
+
+
+let cgrid = document.querySelector('.cgrid');
+
+// создаем плитки продукции
+for (let i = 0; i < amountOfProducts; i++) {
+	let tile = document.createElement('a');
+	tile.classList = 'tile';
+	tile.href = '#'; // исправить
+	tile.setAttribute('val', i);
+	tile.innerHTML = `<div class="cover"></div`;
+	cgrid.append(tile);
 }
 
 // загружаем картинки изделий
@@ -79,9 +119,6 @@ for (let item of tiles) {
 									url(img/items/${number}.jpg)`;
 }
 
-// ставим нулевую картинку и включаем интервал
-computeImg();
-let interval = setInterval(computeImg, ms);
 
 
 
